@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>
+        Slap Countdown
+    </title>
+    <link rel="icon" type="image/jpg" href="slap.jpg"/>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+p {
+  text-align: center;
+  color: white;
+  font-size: 80px;
+  margin-top: 0px;
+  background-color: black;
+}
+</style>
+</head>
+
+<body style="background-color: black; text-align: center">
+
+    <h1> hello </h1>
+    <h2> nice to meet you</h2>
+    <h1> you will.....</h1>
+
+    <div> 
+        <p id="demo"></p>
+    </div>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("June 10, 2021 12:53:10").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "D " + hours + "H "
+  + minutes + "min " + seconds + "sec ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "YOU ARE DEAD &#128128";
+  }
+}, 1000);
+</script>
+</body>
+</html>
+
